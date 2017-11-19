@@ -1,0 +1,16 @@
+﻿Design Document Template
+November 18, 2017
+
+
+OBJECTIVE
+
+
+To allow people to use Spotify and save multiple songs and listen to other songs that other people have saved
+
+
+BACKGROUND 
+Jamming should allow users to look at other people’s playlists as well instead of having to constantly make your own. There should also be a feature where you can follow your friends so that you can look at their playlists.
+TECHNICAL DESIGN
+A new component called “OtherLists” should be created. It would allow the user to look at other people’s lists and the function “Follow” would allow users to follow thier friends and look at their playlists. 
+CAVEATS
+This new function should allow users to look at their own music while looking at other people’s playlists as well. Currently, Jammming will save the displayed playlist name and tracks on every "SAVE PLAYLIST" click regardless of whether or not data has changed. This could result in unnecessary requests to the Spotify API (especially considering Playlist names are not likely to change often). As noted in the previous caveat, though, extra requests to the Spotify API will not result in any change to the user experience. If we find in the future that users are intentionally abusing this functionality and we run the risk of throttling the Spotify API, we will implement this functionality. However, at this point, this would be another premature optimization.
